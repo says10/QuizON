@@ -9,7 +9,7 @@ const App = () => {
       {/* Global Quiz Header */}
       <header className="quiz-global-header">
         <div className="quiz-logo">
-          <img src="src\quiz-icon.png" alt="Quiz Icon" className="quiz-icon" />
+          <img src="/quiz-icon.png" alt="Quiz Icon" className="quiz-icon" />
           <span className="quiz-title">QuizON</span>
         </div>
         <span className="copyright">© Says10</span>
