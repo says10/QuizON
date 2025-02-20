@@ -16,7 +16,6 @@ Features ✨
 
 1. Clone the Repository  
 git clone https://github.com/says10/QuizON.git   
-cd react   
 
 2. Install Dependencies   
 npm install
