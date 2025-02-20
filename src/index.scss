@@ -1,0 +1,310 @@
+// Dark Theme Colors
+$bg-color: #121212;
+$card-bg: #1e1e1e;
+$text-color: #f5f5f5;
+$primary: #007bff;
+$correct: #28a745;
+$wrong: #dc3545;
+$border-color: #333;
+$hover-bg: #252525;
+$secondary: #6c757d;
+
+// Apply Full Dark Theme
+body, html {
+  background: $bg-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+// 🔹 Quiz Container Styling (Wider & Centered)
+.quiz-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 25px;
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: $text-color;
+}
+
+// 🔹 Question Header with Icon
+.question {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  text-align: center;
+
+  &::before {
+    
+    font-size: 2rem;
+    color: $primary;
+  }
+}
+
+// 🔹 Total Questions Counter
+.total-question {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #bbb;
+}
+
+// 🔹 Answer List Styling
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 16px;
+    margin: 12px 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    background: $card-bg;
+    color: $text-color;
+    transition: background 0.3s ease, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    position: relative;
+
+    &::before {
+      content: "🔘";
+      font-size: 1.4rem;
+      color: $secondary;
+    }
+
+    &:hover {
+      background: $hover-bg;
+      transform: scale(1.04);
+      border-color: $primary;
+    }
+
+    &:focus {
+      outline: 2px solid $primary;
+    }
+  }
+}
+
+// Selected Answer Styling
+.selected-answer {
+  background-color: lighten($primary, 10%) !important;
+  color: white;
+  font-weight: bold;
+
+  &::before {
+    content: "✅";
+    color: white;
+  }
+}
+
+// Correct & Wrong Answer Colors
+.correct-answer {
+  background-color: $correct !important;
+  color: white;
+  font-weight: bold;
+
+  &::before {
+    content: "✔️";
+  }
+}
+
+.wrong-answer {
+  background-color: $wrong !important;
+  color: white;
+  font-weight: bold;
+
+  &::before {
+    content: "❌";
+  }
+}
+
+// 🔹 Display Correct Answer for Input-Based Questions
+.correct-answer-display {
+  margin-top: 14px;
+  font-weight: bold;
+  color: $primary;
+}
+
+// 🔹 Footer Buttons (Improved with Bounce Effect)
+.footer {
+  margin-top: 30px;
+
+  button {
+    padding: 16px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: $primary;
+    color: white;
+    transition: 0.3s ease, transform 0.2s;
+    font-weight: bold;
+
+    &:hover {
+      background: darken($primary, 12%);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// 🔹 Result Page (Now with Trophy Icon 🏆)
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: $card-bg;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  &::before {
+    content: "🏆";
+    font-size: 2.2rem;
+    color: $primary;
+  }
+
+  span {
+    color: $primary;
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 22px;
+    padding: 16px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: $correct;
+    color: white;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: darken($correct, 12%);
+      transform: scale(1.05);
+    }
+  }
+}
+/* Input field container */
+.input-answer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Default input field */
+.quiz-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input field on focus */
+.quiz-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Correct Answer Input */
+.quiz-input.correct {
+  border-color: green;
+  background-color: #e6ffe6;
+}
+
+/* Wrong Answer Input */
+.quiz-input.wrong {
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+/* Correct Answer Display */
+.correct-answer-display {
+  color: green;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Wrong Answer Display */
+.wrong-answer {
+  color: white;
+  font-weight: bold;
+  margin-top: 5px;
+}
+/* Correct Answer Text when user is wrong */
+.quiz-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-number-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.question-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.total-questions {
+  font-weight: normal;
+  color: white;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 80%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.5s ease-in-out;
+}
+
+.quiz-question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 10px;
+  padding: 0 15px;
+}
+

@@ -1,0 +1,62 @@
+/* Timer Container */
+.timer {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    margin: 10px auto;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Default Timer Icon */
+.timer::before {
+    content: "⏳"; /* Hourglass */
+    font-size: 1.8rem;
+}
+
+/* Change color and icon based on remaining time */
+.timer[data-time="20"] {
+    color: #ffcc00; /* Yellow (Warning) */
+    background: rgba(255, 204, 0, 0.2);
+}
+
+.timer[data-time="20"]::before {
+    content: "⚠️"; /* Warning Icon */
+}
+
+.timer[data-time="10"] {
+    color: #ff8800; /* Orange (Critical) */
+    background: rgba(255, 136, 0, 0.2);
+}
+
+.timer[data-time="10"]::before {
+    content: "⏰"; /* Alarm Clock */
+}
+
+.timer[data-time="5"] {
+    color: #ff4444; /* Red (Danger) */
+    background: rgba(255, 68, 68, 0.2);
+    animation: pulse 0.8s infinite alternate; /* Blinking effect */
+}
+
+.timer[data-time="5"]::before {
+    content: "🔥"; /* Fire Icon */
+}
+
+/* Blinking effect for danger zone */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
