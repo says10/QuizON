@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# QuizON
+The Ultimate Quiz App
 
-Currently, two official plugins are available:
+QuizOn is an interactive quiz application that allows users to test their knowledge with multiple-choice and input-based questions. The app keeps track of attempts, scores, and performance history.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features ✨
+📝 Multiple Question Types - Supports MCQs and input-based questions.   
+⏳ Answer Timer - Automatically moves to the next question when time runs out.  
+📊 Scoreboard - Tracks the number of correct and incorrect answers.  
+📌 Attempt History - Saves past quiz attempts using IndexedDB.   
+📈 Progress Bar - Displays quiz progress dynamically.
+🎯 Responsive UI - Optimized for different screen sizes.
+
+
+
+1. Clone the Repository  
+git clone https://github.com/says10/QuizON.git   
+cd react   
+
+2. Install Dependencies   
+npm install
+
+3. Run the App Locally  
+npm run dev
+
+
+Live Demo 🌍
+Check out the deployed app here: https://quiz-on-lemon.vercel.app/
